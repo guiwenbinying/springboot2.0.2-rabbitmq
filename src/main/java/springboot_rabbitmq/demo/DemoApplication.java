@@ -17,16 +17,16 @@ import org.springframework.context.annotation.Bean;
 */
 @SpringBootApplication
 public class DemoApplication {
-    final static String queueName = "hello";
+    final static String queueName = "helloQueue";
 //https://www.cnblogs.com/boshen-hzb/p/6841982.html
     @Bean
     public Queue helloQueue() {
-        return new Queue("hello");
+        return new Queue("helloQueue");
     }
 
     @Bean
     public Queue userQueue() {
-        return new Queue("user");
+        return new Queue("userQueue");
     }
 
     //===============以下是验证topic Exchange的队列==========
