@@ -1,0 +1,18 @@
+package springboot_rabbitmq.demo.topic;
+import org.springframework.amqp.rabbit.annotation.RabbitHandler;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.stereotype.Component;
+/**
+ * @Author:庄桂滨
+ * @Description
+ * @Date:Created in 下午 12:54 2018/6/12 0012
+ * @Modified By
+ */
+@Component
+@RabbitListener(queues = "topic.messages")
+public class topicMessagesReceiver {
+    @RabbitHandler
+    public void process(String msg) {
+        System.out.println("topicMessagesReceiver  : " +msg);
+    }
+}
